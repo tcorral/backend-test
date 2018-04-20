@@ -4,15 +4,16 @@
   "description": "Blue Harvest Backend Code Assessment",
   "main": "app.js",
   "scripts": {
-    "start:dev": "DEBUG=true npx nodemon app.js",
-    "start:prod": "node app.js",
-    "db:init": "DEBUG=true node bin/initDb.js",
-    "db:populate": "DEBUG=true node bin/populate.js",
-    "config:list": "node bin/config.js list",
     "config:current": "node bin/config.js current",
     "config:get": "nnode bin/config.js get",
-    "test:lint": "npx standard .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "config:list": "node bin/config.js list",
+    "db:init": "DEBUG=true node bin/initDb.js",
+    "db:populate": "DEBUG=true node bin/populate.js",
+    "dev:watch": "DEBUG=true npx nodemon app.js",
+    "prod:start": "NODE_ENV=production npx forever start app.js",
+    "prod:stop": "npx forever stop app.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test:lint": "npx standard ."
   },
   "keywords": [
     "blue",
@@ -24,12 +25,15 @@
   "author": "Alberto Martinez de Murga Ramirez",
   "license": "ISC",
   "devDependencies": {
+    "chai": "^4.1.2",
     "faker": "^4.1.0",
+    "mocha": "^5.1.1",
     "nodemon": "^1.17.3",
     "standard": "^11.0.1"
   },
   "dependencies": {
     "body-parser": "^1.18.2",
+    "compression": "^1.7.2",
     "cors": "^2.8.4",
     "express": "^4.16.3",
     "forever": "^0.15.3",

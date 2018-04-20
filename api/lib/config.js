@@ -4,7 +4,8 @@ const config = {
   LISTEN_PORT: 8080,
   MORGAN_LOGS: 'combined',
   SQLITE: './sqlite.db',
-  DEBUG: false
+  DEBUG: false,
+  NODE_ENV: 'development'
 }
 
 const get = (key) => {

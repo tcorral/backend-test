@@ -11,6 +11,7 @@ const bodyParser = require('body-parser') // Parses HTTP request body
 const cors = require('cors') // Enables CORS
 const helmet = require('helmet') // Security.
 const morgan = require('morgan') // Logger.
+const compression = require('compression') // GZip compression
 const notFoundHandler = require('./api/lib/mw-404.js') // 404
 const errorHandler = require('./api/lib/mw-500.js') // 500
 
@@ -27,6 +28,9 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(cors())
 app.use(helmet())
 app.use(morgan(config.get('MORGAN_LOGS')))
+if (config.get('NODE_ENV') === 'production') {
+  app.use(compression())
+}
 
 // Loads the controllers go here
 const versionRouter = express.Router()
