@@ -12,8 +12,8 @@
     "dev:watch": "DEBUG=true npx nodemon app.js",
     "prod:start": "NODE_ENV=production npx forever start app.js",
     "prod:stop": "npx forever stop app.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "test:lint": "npx standard ."
+    "test:lint": "npx standard .",
+    "test:unit": "npx mocha --recursive"
   },
   "keywords": [
     "blue",
@@ -29,6 +29,7 @@
     "faker": "^4.1.0",
     "mocha": "^5.1.1",
     "nodemon": "^1.17.3",
+    "sinon": "^4.5.0",
     "standard": "^11.0.1"
   },
   "dependencies": {

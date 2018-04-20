@@ -65,12 +65,12 @@ async function insert (trx, customerID, alias = null, amount = 0) {
 }
 
 async function getById (trx, accountId) {
-  const [account] = await trx().select().from(TABLE_NAME).where('id', accountId)
+  const [account] = await trx.select().from(TABLE_NAME).where('id', accountId)
   return account
 }
 
 async function getByCustomer (trx, customerID) {
-  const entries = await trx().select()
+  const entries = await trx.select()
     .from(TABLE_NAME).where('customer_id', customerID)
   return entries
 }

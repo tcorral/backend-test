@@ -37,7 +37,7 @@ async function createTable (trx, drop) {
 }
 
 async function getById (trx, transactionID) {
-  const [transaction] = await trx().select().from(TABLE_NAME).where('id', transactionID)
+  const [transaction] = await trx.select().from(TABLE_NAME).where('id', transactionID)
   return transaction
 }
 

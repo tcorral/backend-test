@@ -43,4 +43,4 @@ app.use(notFoundHandler)
 app.use(errorHandler)
 
 const port = config.get('LISTEN_PORT')
-app.listen(port)
+app.listen(port, () => console.log(`Listening on port: ${port}`))

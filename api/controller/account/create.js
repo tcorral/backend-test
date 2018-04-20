@@ -12,7 +12,7 @@ module.exports = {
 
     // Validation
     if (!customerID || Number.isNaN(customerID)) {
-      return res.status(400).send({ error: 'Missing customerID' })
+      return res.status(400).send({ error: 'Missing customerID.' })
     }
 
     const customer = await Customer.getById(db, customerID)
