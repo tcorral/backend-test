@@ -1,0 +1,41 @@
+{
+  "name": "blue-harvest",
+  "version": "1.0.0",
+  "description": "Blue Harvest Backend Code Assessment",
+  "main": "app.js",
+  "scripts": {
+    "start:dev": "DEBUG=true npx nodemon app.js",
+    "start:prod": "node app.js",
+    "db:init": "DEBUG=true node bin/initDb.js",
+    "db:populate": "DEBUG=true node bin/populate.js",
+    "config:list": "node bin/config.js list",
+    "config:current": "node bin/config.js current",
+    "config:get": "nnode bin/config.js get",
+    "test:lint": "npx standard .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "blue",
+    "harvest",
+    "code",
+    "assessment",
+    "node"
+  ],
+  "author": "Alberto Martinez de Murga Ramirez",
+  "license": "ISC",
+  "devDependencies": {
+    "faker": "^4.1.0",
+    "nodemon": "^1.17.3",
+    "standard": "^11.0.1"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "forever": "^0.15.3",
+    "helmet": "^3.12.0",
+    "knex": "^0.14.6",
+    "morgan": "^1.9.0",
+    "sqlite3": "^4.0.0"
+  }
+}
